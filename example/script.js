@@ -374,4 +374,23 @@ window.addEventListener('resize', () => {
     ScrollTrigger.refresh();
 });
 
+// ================================
+// PROJECTS DIAGONAL FALL-IN ANIMATION
+// ================================
+gsap.utils.toArray('.diagonal-projects .project').forEach((project, i) => {
+    gsap.from(project, {
+        scrollTrigger: {
+            trigger: project,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+        },
+        y: -200,
+        opacity: 0,
+        rotate: gsap.getProperty(project, 'rotate') || 0,
+        duration: 1.1,
+        ease: 'bounce.out',
+        delay: i * 0.15
+    });
+});
+
 console.log('✨ We Think Elastic Clone - GSAP Animations Loaded!');
