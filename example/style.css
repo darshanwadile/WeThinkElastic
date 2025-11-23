@@ -276,6 +276,30 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    cursor: none;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.custom-cursor svg {
+    width: 24px;
+    height: 24px;
+    fill: #e7ceb0;
+    transform: rotate(0deg);
 }
 
 .diagonal-projects .project {
@@ -290,6 +314,18 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    cursor: none;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.diagonal-projects .project:hover {
+    transform: scale(1.12) !important;
+    z-index: 100 !important;
+    filter: none !important;
+}
+
+.diagonal-projects:hover .project:not(:hover) {
+    filter: blur(4px) brightness(0.7);
 }
 
 .diagonal-projects .project-1 { left: 0%; top: 0%; z-index: 2; transform: rotate(-8deg); }
@@ -648,4 +684,38 @@ footer a:hover {
 /* Splitting.js overrides */
 .splitting .char {
     display: inline-block;
+}
+
+.cta-oval-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem 0 0 0;
+}
+
+.cta-oval {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    height: 140px;
+    border: 2px solid var(--color-accent);
+    border-radius: 50% / 40%;
+    background: transparent;
+    color: var(--color-accent);
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.cta-oval:hover {
+    background: var(--color-accent);
+    color: var(--color-dark);
 }

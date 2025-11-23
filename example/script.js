@@ -375,6 +375,36 @@ window.addEventListener('resize', () => {
 });
 
 // ================================
+// CUSTOM CURSOR FOR PROJECTS SECTION
+// ================================
+const customCursor = document.querySelector('.custom-cursor');
+const diagonalProjects = document.querySelector('.diagonal-projects');
+
+if (customCursor && diagonalProjects) {
+    // Hide custom cursor initially
+    customCursor.style.opacity = '0';
+    
+    // Show custom cursor when entering projects section
+    diagonalProjects.addEventListener('mouseenter', () => {
+        customCursor.style.opacity = '1';
+    });
+    
+    diagonalProjects.addEventListener('mouseleave', () => {
+        customCursor.style.opacity = '0';
+    });
+    
+    // Track mouse movement
+    diagonalProjects.addEventListener('mousemove', (e) => {
+        gsap.to(customCursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+    });
+}
+
+// ================================
 // PROJECTS DIAGONAL FALL-IN ANIMATION
 // ================================
 gsap.utils.toArray('.diagonal-projects .project').forEach((project, i) => {
