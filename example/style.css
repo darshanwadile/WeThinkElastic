@@ -511,25 +511,36 @@ figcaption p[data-category] {
    LOGOS SECTION
    ================================ */
 #logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    padding: 5rem 3rem;
+    padding: 5rem 0;
     background: rgba(242, 226, 194, 0.05);
+    overflow: hidden;
+}
+
+.logos-scroll-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.logos-track {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    animation: scroll-logos 40s linear infinite;
+}
+
+@keyframes scroll-logos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .logo-item {
-    width: 120px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-shrink: 0;
+    width: 140px;
+    height: 80px;
+    object-fit: contain;
     opacity: 0.6;
     transition: opacity 0.3s ease;
-    font-size: 0.9rem;
-    color: var(--color-accent);
+    filter: brightness(0) invert(1);
 }
 
 .logo-item:hover {
@@ -723,3 +734,8 @@ footer a:hover {
     transform: rotate(-15deg) scale3d(1.1, 1.4, 1);
 }
 
+#logos {
+    padding: 5rem 0;
+    background: rgba(6, 6, 6, 0.03);
+    overflow: hidden;
+}
