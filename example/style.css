@@ -699,10 +699,10 @@ footer a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 480px;
-    height: 140px;
+    width: 520px;
+    height: 160px;
     border: 2px solid var(--color-accent);
-    border-radius: 50% / 40%;
+    border-radius: 50% / 50%;
     background: transparent;
     color: var(--color-accent);
     font-family: var(--font-primary);
@@ -710,7 +710,7 @@ footer a:hover {
     font-weight: 500;
     letter-spacing: 0.04em;
     text-align: center;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s, border-radius 0.35s cubic-bezier(0.76,0,0.24,1), width 0.35s cubic-bezier(0.76,0,0.24,1), height 0.35s cubic-bezier(0.76,0,0.24,1);
     margin: 0 auto;
     text-decoration: none;
 }
@@ -718,4 +718,7 @@ footer a:hover {
 .cta-oval:hover {
     background: var(--color-accent);
     color: var(--color-dark);
+    border-radius: 50% / 40%;
+    width: 540px;
+    height: 140px;
 }
