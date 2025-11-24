@@ -423,4 +423,18 @@ gsap.utils.toArray('.diagonal-projects .project').forEach((project, i) => {
     });
 });
 
+
+//Expertise Text
+gsap.to('.container-horizontal h1', {
+    transform: 'translateX(-150%)',
+    scrollTrigger: {
+        trigger : '.container-horizontal h1',
+        scroller : 'body',
+        markers : true,
+        start: 'top 0%',
+        end: 'top -100%',
+        scrub: 2,
+        pin : true,
+    }
+} )
 console.log('✨ We Think Elastic Clone - GSAP Animations Loaded!');
