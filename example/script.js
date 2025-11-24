@@ -427,15 +427,44 @@ gsap.utils.toArray('.diagonal-projects .project').forEach((project, i) => {
 // ================================
 // EXPERTISE SECTION ANIMATION
 // ================================
-gsap.to('.container-horizontal h1', {
-    transform: 'translateX(-120%)',
-    scrollTrigger: {
-        trigger: '.container-horizontal',
-        scroller: 'body',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1.5,
-        pin: true,
+window.addEventListener('load', () => {
+    const horizontalScroll = document.querySelector('.horizontal-text-scroll');
+    if (horizontalScroll) {
+        const text = horizontalScroll.querySelector('.text');
+        const spans = text.querySelectorAll('span');
+        
+        // Wait a moment for layout to settle
+        setTimeout(() => {
+            // Main horizontal scroll animation
+            gsap.to(text, {
+                x: () => -(text.offsetWidth - window.innerWidth),
+                ease: 'sine.inOut',
+                scrollTrigger: {
+                    trigger: horizontalScroll,
+                    pin: horizontalScroll,
+                    scrub: 1,
+                    start: 'top top',
+                    end: 'bottom top-=300%',
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                    onUpdate: (self) => {
+                        // Refresh on update to ensure smooth animation
+                    }
+                }
+            });
+            
+            // Parallax effect for images
+            gsap.to(spans, {
+                xPercent: -50,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: horizontalScroll,
+                    start: 'top top',
+                    end: 'bottom top-=300%',
+                    scrub: 1,
+                }
+            });
+        }, 300);
     }
 });
 console.log('✨ We Think Elastic Clone - GSAP Animations Loaded!');
