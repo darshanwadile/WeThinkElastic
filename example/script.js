@@ -424,17 +424,18 @@ gsap.utils.toArray('.diagonal-projects .project').forEach((project, i) => {
 });
 
 
-//Expertise Text
+// ================================
+// EXPERTISE SECTION ANIMATION
+// ================================
 gsap.to('.container-horizontal h1', {
-    transform: 'translateX(-150%)',
+    transform: 'translateX(-120%)',
     scrollTrigger: {
-        trigger : '.container-horizontal h1',
-        scroller : 'body',
-        markers : true,
-        start: 'top 0%',
-        end: 'top -100%',
-        scrub: 2,
-        pin : true,
+        trigger: '.container-horizontal',
+        scroller: 'body',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.5,
+        pin: true,
     }
-} )
+});
 console.log('✨ We Think Elastic Clone - GSAP Animations Loaded!');
