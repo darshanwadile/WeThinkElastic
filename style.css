@@ -626,7 +626,7 @@ figcaption p[data-category] {
 #logos {
     padding: 5rem 0;
     background: #fff;
-    color: #fff;
+    color: #0b0a0a;
     overflow: hidden;
 }
 
@@ -728,6 +728,7 @@ footer {
 
 footer ul {
     display: flex;
+    color: gray;
     flex-wrap: wrap;
     gap: 12rem;
     justify-content: center;
@@ -737,14 +738,21 @@ footer ul {
 footer li {
     font-size: 0.9rem;
     opacity: 0.8;
+    color: gray;
 }
 
 footer a {
     transition: opacity 0.3s ease;
 }
 
+footer li:hover {
+    opacity: 1;
+    color: white;
+}
+
 footer a:hover {
     opacity: 1;
+    color: white;
 }
 
 /* ================================

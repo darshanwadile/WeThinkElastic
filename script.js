@@ -209,65 +209,19 @@ gsap.from(expertiseCards, {
 // ================================
 // LOGOS SECTION ANIMATIONS
 // ================================
-const logoItems = document.querySelectorAll('.logo-item');
-gsap.from(logoItems, {
-    scrollTrigger: {
-        trigger: '#logos',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-    },
-    scale: 0.5,
-    opacity: 0,
-    stagger: 0.05,
-    duration: 0.6,
-    ease: 'back.out(1.7)'
-});
-
-// ================================
-// CONTACT SECTION ANIMATIONS
-// ================================
-gsap.from('.container-contact-text p', {
-    scrollTrigger: {
-        trigger: '.contact',
-        start: 'top 70%',
-        end: 'top 30%',
-        toggleActions: 'play none none reverse'
-    },
-    y: 50,
-    opacity: 0,
-    stagger: 0.15,
-    duration: 1,
-    ease: 'power3.out'
-});
-
-gsap.from('.coffee-placeholder', {
-    scrollTrigger: {
-        trigger: '.contact',
-        start: 'top 70%',
-        toggleActions: 'play none none reverse'
-    },
-    scale: 0,
-    rotation: -180,
-    opacity: 0,
-    duration: 1.2,
-    ease: 'elastic.out(1, 0.5)'
-});
-
-// ================================
-// FOOTER ANIMATION
-// ================================
-gsap.from('footer ul li', {
-    scrollTrigger: {
-        trigger: 'footer',
-        start: 'top 90%',
-        toggleActions: 'play none none reverse'
-    },
-    y: 30,
-    opacity: 0,
-    stagger: 0.08,
-    duration: 0.6,
-    ease: 'power2.out'
-});
+// const logoItems = document.querySelectorAll('.logo-item');
+// gsap.from(logoItems, {
+//     scrollTrigger: {
+//         trigger: '#logos',
+//         start: 'top 80%',
+//         toggleActions: 'play none none reverse'
+//     },
+//     scale: 0.5,
+//     opacity: 0,
+//     stagger: 0.05,
+//     duration: 0.6,
+//     ease: 'back.out(1.7)'
+// });
 
 // ================================
 // MOBILE MENU TOGGLE
