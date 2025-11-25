@@ -58,6 +58,42 @@ gsap.to(window, {
 });
 
 // ================================
+// HEADER SCROLL HIDE/SHOW
+// ================================
+const header = document.querySelector('header');
+let lastScrollY = 0;
+let headerHidden = false;
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    // Hide header when scrolling down
+    if (currentScrollY > lastScrollY && currentScrollY > 10) {
+        if (!headerHidden) {
+            gsap.to(header, {
+                y: -100,
+                duration: 0.3,
+                ease: 'power2.inOut'
+            });
+            headerHidden = true;
+        }
+    } 
+    // Show header when scrolling up
+    else {
+        if (headerHidden) {
+            gsap.to(header, {
+                y: 0,
+                duration: 0.3,
+                ease: 'power2.inOut'
+            });
+            headerHidden = false;
+        }
+    }
+    
+    lastScrollY = currentScrollY;
+}, { passive: true });
+
+// ================================
 // HERO PARALLAX EFFECT
 // ================================
 gsap.to('#container-hello', {
