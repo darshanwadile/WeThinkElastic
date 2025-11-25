@@ -638,12 +638,18 @@ figcaption p[data-category] {
     display: flex;
     align-items: center;
     gap: 6rem;
-    animation: scroll-logos 40s linear infinite;
+    padding-right: 6rem;
+    animation: scroll-logos 60s linear infinite;
+    will-change: transform;
 }
 
 @keyframes scroll-logos {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 3rem));
+    }
 }
 
 .logo-item {
