@@ -496,7 +496,7 @@ figcaption p[data-category] {
    HORIZONTAL SCROLL SECTION
    ================================ */
 .container-horizontal {
-    background-color: var(--color-dark);
+    background-color: #9ac1cb;
 }
 
 .horizontal-text-scroll {
@@ -528,7 +528,7 @@ figcaption p[data-category] {
     text-transform: uppercase;
     white-space: nowrap;
     will-change: transform;
-    color: var(--color-cream);
+    color: #000000;
     margin: 0;
 }
 
@@ -540,7 +540,7 @@ figcaption p[data-category] {
 .horizontal-text-scroll .text span img {
     width: 100%;
     height: auto;
-    filter: brightness(0) invert(1);
+    filter: brightness(0);
 }
 
 .horizontal-text-scroll .text span:nth-of-type(odd) {
@@ -565,10 +565,12 @@ figcaption p[data-category] {
 
 .list-horizontal-text {
     display: flex;
-    gap: 5rem;
+    gap: 12rem;
     padding: min(7vw, 50rem) min(clamp(2rem, 4vw, 4.4rem), 2rem) min(25vw, 18rem);
     overflow-x: auto;
     scrollbar-width: none;
+    background-color: #9ac1cb;
+    color: #000000;
 }
 
 .list-horizontal-text::-webkit-scrollbar {
@@ -581,17 +583,24 @@ figcaption p[data-category] {
 
 .list-horizontal-text h4 {
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 900;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--color-accent);
+    border-bottom: 3px solid #000000;
     padding-bottom: 1rem;
+    text-align: center;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .list-horizontal-text p {
     font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 400;
+    text-align: center;
     margin-bottom: 0.8rem;
-    opacity: 0.9;
+    opacity: 0.85;
+    color: #000000;
+    line-height: 1.6;
 }
 
 @media screen and (max-width: 768px) {
