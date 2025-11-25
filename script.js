@@ -176,7 +176,7 @@ gsap.from('.cta', {
 // ================================
 // RIBBON ROTATION (Enhanced)
 // ================================
-gsap.to('#ribbon', {
+gsap.to('.ribbon-svg', {
     scrollTrigger: {
         trigger: '#our-projects',
         start: 'top bottom',
