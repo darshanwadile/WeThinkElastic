@@ -121,16 +121,18 @@ nav a:hover {
     font-size: 40vw;
     font-weight: 800;
     letter-spacing: -0.08em;
-    line-height: 0.9;
+    line-height: 1.2;
     margin-top: -7vw;
     text-align: left;
     padding-left: 3rem;
+    padding-right: 3rem;
     pointer-events: none;
     transform: translateZ(0);
+    overflow: visible;
 }
 
 #container-hello h2 .word {
-    overflow: hidden;
+    overflow: visible;
 }
 
 #container-hello h2 .word .char {
@@ -138,7 +140,7 @@ nav a:hover {
 }
 
 #container-hello h2 .word .char:last-of-type {
-    transform: translate3d(-0.2vw, 0, 0);
+    transform: none;
 }
 
 .text-hello {
@@ -146,9 +148,9 @@ nav a:hover {
     display: flex;
     flex: 0.25;
     flex-direction: column;
-    font-size: min(6.8vw, 3.7rem);
+    font-size: 3vw;
     letter-spacing: min(3vw, -0.15rem);
-    line-height: 1.1;
+    line-height: 1.5;
     margin-bottom: min(4vw, 4rem);
     text-transform: uppercase;
 }
