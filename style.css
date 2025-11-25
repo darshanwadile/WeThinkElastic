@@ -106,49 +106,61 @@ nav a:hover {
    HERO SECTION
    ================================ */
 #container-hello {
-    height: 100vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 0 2rem;
-    /* padding-top: 10rem; */
-    position: relative;
+    margin-bottom: min(5vh, 10rem);
+    min-height: calc(100vh - 8rem);
     overflow: hidden;
+    text-align: center;
 }
 
 #container-hello h2 {
-    font-size: 21vw;
-    font-weight: 900;
-    /* line-height: 0.85; */
-    margin: 0;
+    color: #F3C77C;
     font-family: var(--font-primary);
-    font-style: normal;
-    letter-spacing: -0.05em;
-    text-transform: lowercase;
-    text-align: center;
-    width: 100vw;
-    max-width: 100vw;
-    box-sizing: border-box;
-    word-break: break-word;
-    color: var(--color-cream);
-    overflow-x: hidden;
-    white-space: nowrap;
+    font-size: 40vw;
+    font-weight: 800;
+    letter-spacing: -0.08em;
+    line-height: 0.9;
+    margin-top: -7vw;
+    text-align: left;
+    padding-left: 3rem;
+    pointer-events: none;
+    transform: translateZ(0);
+}
+
+#container-hello h2 .word {
+    overflow: hidden;
+}
+
+#container-hello h2 .word .char {
+    will-change: transform;
+}
+
+#container-hello h2 .word .char:last-of-type {
+    transform: translate3d(-0.2vw, 0, 0);
 }
 
 .text-hello {
-    margin-top: 3rem;
+    color: #F3C77C;
+    display: flex;
+    flex: 0.25;
+    flex-direction: column;
+    font-size: min(6.8vw, 3.7rem);
+    letter-spacing: min(3vw, -0.15rem);
+    line-height: 1.1;
+    margin-bottom: min(4vw, 4rem);
+    text-transform: uppercase;
 }
 
 .text-hello p {
-    font-size: clamp(1.2rem, 3vw, 2.5rem);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 1;
-    text-align: center;
-    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.text-hello span {
+    display: block;
+    transform-origin: bottom left;
+    will-change: transform;
 }
 
 /* ================================
