@@ -540,7 +540,8 @@ figcaption p[data-category] {
 .horizontal-text-scroll .text span img {
     width: 100%;
     height: auto;
-    filter: brightness(0);
+    filter: none;
+    opacity: 1;
 }
 
 .horizontal-text-scroll .text span:nth-of-type(odd) {
