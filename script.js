@@ -190,13 +190,6 @@ gsap.to('#ribbon', {
 // ================================
 // HORIZONTAL SCROLL SECTION
 // ================================
-// Animate the scrolling text
-const horizontalText = document.querySelector('.horizontal-text-scroll .text');
-if (horizontalText) {
-    // Clone the text for seamless loop
-    horizontalText.innerHTML += horizontalText.innerHTML;
-}
-
 // Animate expertise cards
 const expertiseCards = document.querySelectorAll('.list-horizontal-text li');
 gsap.from(expertiseCards, {
