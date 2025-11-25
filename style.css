@@ -195,32 +195,59 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 5rem 3rem;
+    position: relative;
+}
+
+.typoTitle {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .typoTitle h3 {
-    font-size: clamp(3rem, 8vw, 8rem);
-    font-weight: 700;
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
     line-height: 1;
-    margin-bottom: 3rem;
-    text-transform: lowercase;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: var(--color-cream);
+    letter-spacing: -0.02em;
 }
 
-.typoTitle h3 i {
+.typoTitle h3 .italic-we,
+.typoTitle h3 .italic-to {
     font-family: var(--font-secondary);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
+    margin-right: 0.2em;
+}
+
+.hero-main-title {
+    display: inline-block;
 }
 
 .content-typo-title {
-    max-width: 1200px;
+    position: absolute;
+    right: 0;
+    bottom: 9.9%;
+    text-align: left;
+    max-width: 350px;
+    margin-top: 0;
+    pointer-events: none;
 }
 
 .content-typo-title p {
-    font-size: clamp(1.5rem, 3.5vw, 3rem);
-    font-weight: 300;
-    line-height: 1.4;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.6;
     margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+    text-align: left;
 }
 
 /* ================================

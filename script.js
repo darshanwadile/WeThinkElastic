@@ -90,19 +90,19 @@ gsap.from('#container-video-start', {
 // ================================
 // TYPOGRAPHY TITLE ANIMATIONS
 // ================================
-// Animate main title lines
-const titleLines = document.querySelectorAll('.typoTitle h3 p');
-gsap.from(titleLines, {
+// Animate main title characters
+const titleChars = document.querySelectorAll('.hero-main-title .char');
+gsap.from(titleChars, {
     scrollTrigger: {
         trigger: '.typoTitle',
         start: 'top 70%',
         end: 'top 30%',
         toggleActions: 'play none none reverse'
     },
-    x: -100,
     opacity: 0,
-    stagger: 0.15,
-    duration: 1,
+    y: 50,
+    stagger: 0.05,
+    duration: 0.6,
     ease: 'power3.out'
 });
 
