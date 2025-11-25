@@ -420,4 +420,27 @@ window.addEventListener('load', () => {
     }
 });
 
+// ================================
+// UNDERLINE ANIMATION ON HOVER
+// ================================
+const underlineLinks = document.querySelectorAll('.underline');
+
+underlineLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+        gsap.to(this, {
+            '--line-width': '100%',
+            duration: 0.4,
+            ease: 'power2.out'
+        });
+    });
+
+    link.addEventListener('mouseleave', function() {
+        gsap.to(this, {
+            '--line-width': '0%',
+            duration: 0.4,
+            ease: 'power2.out'
+        });
+    });
+});
+
 console.log('✨ We Think Elastic Clone - GSAP Animations Loaded!');

@@ -695,10 +695,25 @@ figcaption p[data-category] {
     text-transform: uppercase;
 }
 
-.underline:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 8px;
+.underline {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    --line-width: 0%;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: var(--line-width);
+    height: 2px;
+    background-color: var(--color-dark);
+}
+
+.underline:hover::after {
+    text-decoration: none;
 }
 
 .gif {
