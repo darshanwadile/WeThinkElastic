@@ -625,7 +625,8 @@ figcaption p[data-category] {
    ================================ */
 #logos {
     padding: 5rem 0;
-    background: rgba(242, 226, 194, 0.05);
+    background: #fff;
+    color: #fff;
     overflow: hidden;
 }
 
@@ -639,7 +640,7 @@ figcaption p[data-category] {
     align-items: center;
     gap: 6rem;
     padding-right: 6rem;
-    animation: scroll-logos 60s linear infinite;
+    animation: scroll-logos 6s linear infinite;
     will-change: transform;
 }
 
@@ -659,7 +660,7 @@ figcaption p[data-category] {
     object-fit: contain;
     opacity: 0.6;
     transition: opacity 0.3s ease;
-    filter: brightness(0) invert(1);
+    /* filter: brightness(0) invert(1); */
 }
 
 .logo-item:hover {
@@ -672,20 +673,29 @@ figcaption p[data-category] {
 .contact {
     min-height: 80vh;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 8rem 3rem;
-    gap: 5rem;
-}
-
-.container-contact-text p {
-    font-size: clamp(2rem, 5vw, 4.5rem);
-    font-weight: 700;
-    line-height: 1.2;
+    gap: 3rem;
+    background-color: #E7CFB1;
+    color: var(--color-dark);
+    text-align: center;
     text-transform: uppercase;
 }
 
-.underline {
+.container-contact-text {
+    max-width: 9000px;
+}
+
+.container-contact-text p {
+    font-size: clamp(2rem, 7vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.underline:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 8px;
@@ -693,17 +703,19 @@ figcaption p[data-category] {
 
 .gif {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.coffee-placeholder {
-    font-size: 8rem;
-    animation: float 3s ease-in-out infinite;
+.coffee-gif {
+    clip-path: inset(1.15rem 0 0 0);
+    height: clamp(15rem, 30vw, 21.3rem);
+    width: clamp(15rem, 30vw, 21.3rem);
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
+
 
 /* ================================
    FOOTER
@@ -711,12 +723,13 @@ figcaption p[data-category] {
 footer {
     padding: 3rem;
     border-top: 1px solid rgba(242, 226, 194, 0.2);
+    
 }
 
 footer ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 12rem;
     justify-content: center;
     align-items: center;
 }
