@@ -16,19 +16,19 @@ const loaderImages = document.querySelectorAll('.container-loader-image');
 function animateLoadingSequence() {
     const timeline = gsap.timeline();
     
-    // Animate each image one by one
+    // Animate each image one by one - faster speed
     loaderImages.forEach((img, index) => {
         timeline.to(img, {
             opacity: 1,
-            duration: 0.1,
+            duration: 0.08,
             ease: 'power2.inOut'
-        }, index * 0.5);
+        }, index * 0.3);
         
         timeline.to(img, {
             opacity: 0,
-            duration: 0.1,
+            duration: 0.08,
             ease: 'power2.inOut'
-        }, (index * 0.5) + 0.3);
+        }, (index * 0.3) + 0.15);
     });
     
     return timeline;
