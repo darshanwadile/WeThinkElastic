@@ -46,6 +46,63 @@ img, video {
 }
 
 /* ================================
+   LOADING SCREEN
+   ================================ */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: #F3C77C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.loader-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transition-outer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transition-inner {
+    position: relative;
+    width: min(65vw, 26rem);
+    height: min(65vw, 26rem);
+    overflow: hidden;
+}
+
+.container-loader-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.container-loader-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ================================
    HEADER & NAVIGATION
    ================================ */
 header {

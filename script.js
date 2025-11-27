@@ -7,9 +7,54 @@ gsap.registerPlugin(ScrollTrigger);
 Splitting();
 
 // ================================
-// PRELOADER / PAGE LOAD ANIMATION
+// LOADING SCREEN ANIMATION
 // ================================
+const loadingScreen = document.getElementById('loadingScreen');
+const loaderImages = document.querySelectorAll('.container-loader-image');
+
+// Create loading sequence
+function animateLoadingSequence() {
+    const timeline = gsap.timeline();
+    
+    // Animate each image one by one
+    loaderImages.forEach((img, index) => {
+        timeline.to(img, {
+            opacity: 1,
+            duration: 0.1,
+            ease: 'power2.inOut'
+        }, index * 0.5);
+        
+        timeline.to(img, {
+            opacity: 0,
+            duration: 0.1,
+            ease: 'power2.inOut'
+        }, (index * 0.5) + 0.3);
+    });
+    
+    return timeline;
+}
+
+// Wait for page to fully load
 window.addEventListener('load', () => {
+    // Start loading sequence
+    const loadingTimeline = animateLoadingSequence();
+    
+    // After all images have cycled, fade out the loading screen
+    loadingTimeline.to(loadingScreen, {
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.inOut',
+        onComplete: () => {
+            loadingScreen.style.display = 'none';
+            loadingScreen.style.pointerEvents = 'none';
+            // Trigger hero animations after loading screen is hidden
+            triggerHeroAnimations();
+        }
+    });
+});
+
+// Trigger hero animations
+function triggerHeroAnimations() {
     // Create timeline for hero animations
     const heroTimeline = gsap.timeline();
 
@@ -47,7 +92,12 @@ window.addEventListener('load', () => {
         delay: 0.1,
         ease: 'power2.out'
     });
-});
+}
+
+// ================================
+// PRELOADER / PAGE LOAD ANIMATION (kept for reference)
+// ================================
+// Hero animations are now triggered after loading screen
 
 // ================================
 // SMOOTH SCROLL
