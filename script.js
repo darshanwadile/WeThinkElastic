@@ -39,11 +39,11 @@ window.addEventListener('load', () => {
     // Start loading sequence
     const loadingTimeline = animateLoadingSequence();
     
-    // After all images have cycled, fade out the loading screen
+    // After all images have cycled, slide up the loading screen
     loadingTimeline.to(loadingScreen, {
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power2.inOut',
+        y: '-100%',
+        duration: 1.2,
+        ease: 'power3.inOut',
         onComplete: () => {
             loadingScreen.style.display = 'none';
             loadingScreen.style.pointerEvents = 'none';
