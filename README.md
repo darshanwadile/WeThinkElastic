@@ -41,5 +41,3 @@ GSAP/
 - **Splitting.js** - Character-level text animation
 - **HTML5** - Semantic markup with proper accessibility attributes
 - **CSS3** - Flexbox, Grid, custom properties, and media queries
-- **Vanilla JavaScript** - Event handling and DOM manipulation
-
